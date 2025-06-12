@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+import { FormikHelpers } from 'formik'
 
 // Helper function to format date
 const formatDate = (date: Date, format: string) => {
@@ -87,7 +88,6 @@ const services = [
 ];
 
 const Appointments = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [currentWeekStart, setCurrentWeekStart] = useState<Date>(() => {
@@ -153,17 +153,15 @@ const Appointments = () => {
     }
   };
 
-  const handleSubmit = async (values: any, { resetForm }: any) => {
-    setIsSubmitting(true)
+  const handleSubmit = async (_values: any, { setSubmitting }: FormikHelpers<any>) => {
     try {
       // Aquí iría la lógica para enviar el formulario
       await new Promise(resolve => setTimeout(resolve, 1000)) // Simulación de envío
       setSubmitSuccess(true)
-      resetForm()
     } catch (error) {
       console.error('Error al enviar el formulario:', error)
     } finally {
-      setIsSubmitting(false)
+      setSubmitting(false)
     }
   }
 
@@ -191,7 +189,7 @@ const Appointments = () => {
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
-            {({ isSubmitting, setFieldValue, values, errors, touched, submitCount }) => {
+            {({ isSubmitting, setFieldValue, values, errors, submitCount }) => {
               // Scroll al primer error cuando se intenta enviar el formulario
               useEffect(() => {
                 if (submitCount > 0 && Object.keys(errors).length > 0) {

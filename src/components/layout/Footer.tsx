@@ -1,5 +1,3 @@
-import { head } from 'framer-motion/client'
-import { hr } from 'framer-motion/m'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {

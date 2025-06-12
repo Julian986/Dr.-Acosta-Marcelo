@@ -3,6 +3,14 @@ import { motion } from 'framer-motion'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { FaWhatsapp } from 'react-icons/fa';
 import * as Yup from 'yup'
+import { FormikHelpers } from 'formik'
+
+interface FormValues {
+  name: string
+  email: string
+  phone: string
+  message: string
+}
 
 const validationSchema = Yup.object({
   name: Yup.string().required('El nombre es requerido'),
@@ -17,20 +25,17 @@ const validationSchema = Yup.object({
 })
 
 const Contact = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
 
-  const handleSubmit = async (values: any, { resetForm }: any) => {
-    setIsSubmitting(true)
+  const handleSubmit = async (_values: FormValues, { setSubmitting }: FormikHelpers<FormValues>) => {
     try {
       // Aquí iría la lógica para enviar el formulario
       await new Promise(resolve => setTimeout(resolve, 1000)) // Simulación de envío
       setSubmitSuccess(true)
-      resetForm()
     } catch (error) {
       console.error('Error al enviar el formulario:', error)
     } finally {
-      setIsSubmitting(false)
+      setSubmitting(false)
     }
   }
 

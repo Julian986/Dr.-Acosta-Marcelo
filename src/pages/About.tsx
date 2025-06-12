@@ -1,22 +1,22 @@
 import { motion } from 'framer-motion'
 
-const certifications = [
-  {
-    title: 'Especialista en Ortodoncia',
-    institution: 'Universidad de Buenos Aires',
-    year: '2018'
-  },
-  {
-    title: 'Maestría en Implantología',
-    institution: 'Universidad Nacional de Córdoba',
-    year: '2020'
-  },
-  {
-    title: 'Certificación en Odontología Estética',
-    institution: 'Colegio de Odontólogos',
-    year: '2021'
-  }
-]
+// const certifications = [
+//   {
+//     title: 'Especialista en Ortodoncia',
+//     institution: 'Universidad de Buenos Aires',
+//     year: '2018'
+//   },
+//   {
+//     title: 'Maestría en Implantología',
+//     institution: 'Universidad Nacional de Córdoba',
+//     year: '2020'
+//   },
+//   {
+//     title: 'Certificación en Odontología Estética',
+//     institution: 'Colegio de Odontólogos',
+//     year: '2021'
+//   }
+// ]
 
 const About = () => {
   return (

@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
 import '../styles/slick.css'
-import drMarce from '../../public/Dr.Marcelo.png'
-import { motion } from 'framer-motion'
+import 'slick-carousel/slick/slick-theme.css'
 
 const featuredServices = [
   {
