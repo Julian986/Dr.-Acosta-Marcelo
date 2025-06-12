@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
-import '../styles/slick.css'
+import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import '../styles/slick.css'
 
 const featuredServices = [
   {
@@ -143,8 +144,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
+        {/* Testimonials */}
+        <section className="py-20 bg-gray-50">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Lo que dicen nuestros pacientes</h2>
           <div className="max-w-4xl mx-auto">

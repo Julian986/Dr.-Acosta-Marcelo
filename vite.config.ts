@@ -16,10 +16,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true,
-    rollupOptions: {
-      external: ['slick-carousel/slick/slick.css', 'slick-carousel/slick/slick-theme.css']
-    }
+    sourcemap: true
   },
   css: {
     preprocessorOptions: {
